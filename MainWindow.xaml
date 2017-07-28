@@ -1,0 +1,49 @@
+﻿<Window x:Class="PromoCodeGenerator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PromoCodeGenerator"
+        mc:Ignorable="d"
+        Title="Промокод Генератор" Height="250" Width="525" Icon="img/PG.png" >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition  />
+            <RowDefinition  />
+            <RowDefinition  />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition  />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition  />
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Column="0" Grid.Row="0" TextAlignment="Right" VerticalAlignment="Center" Margin="5">
+            Количество цифр:
+        </TextBlock>
+
+        <TextBox x:Name="textBoxNumCount" Height="30" Grid.Column="1" Grid.Row="0"  Margin="5" PreviewTextInput="textBox_PreviewTextInput" PreviewKeyDown="textBox_PreviewKeyDown" TabIndex="0" ToolTip="Введите количество цифр в промокоде" />
+
+        <TextBlock Grid.Column="2" Grid.Row="0" TextAlignment="Right" VerticalAlignment="Center" Margin="5">
+            Количество букв:
+        </TextBlock>
+
+        <TextBox x:Name="textBoxSymCount" Height="30" Grid.Column="3" Grid.Row="0" Margin="5" PreviewTextInput="textBox_PreviewTextInput" PreviewKeyDown="textBox_PreviewKeyDown" TabIndex="1" ToolTip="Введите количество латинских букв в промокоде" />
+
+        <TextBlock Grid.Column="0" Grid.Row="1" TextAlignment="Right" VerticalAlignment="Center" Margin="5">
+            Количество промокодов:
+        </TextBlock>
+
+        <TextBox x:Name="textBoxPomoCount" Height="30" Grid.Column="1" Grid.Row="1" Margin="5" PreviewTextInput="textBox_PreviewTextInput" PreviewKeyDown="textBox_PreviewKeyDown" TabIndex="2" ToolTip="Общее количество промокодов. Не может превышать рассчитанное по формуле размещения с повторениями" />
+
+        <CheckBox x:Name="checkBox1" IsChecked="False" Height="20" Content="Указать первые символы кода" Grid.Column="2" Grid.Row="1"   Margin="5" Click="checkBox1_Click"  />
+
+        <TextBox x:Name="textBoxPromoFirstSymbols" Height="30" Grid.Column="3" Grid.Row="1" Margin="5"  IsEnabled="False" PreviewKeyDown="textBox_PreviewKeyDown" PreviewTextInput="textBoxPromoFirstSymbols_PreviewTextInput" ToolTip="Введите цифры или латинские буквы" />
+
+        <Button x:Name="button1"  Grid.Column="2" Grid.Row="2" Content="Сгенерировать и сохранить промокоды" Grid.ColumnSpan="2"  Margin="5" Click="button1Click" TabIndex="3" />
+
+        <CheckBox x:Name="checkUpper" IsChecked="False" Height="20" Content="Только заглавные буквы" Grid.Column="0" Grid.Row="2"  Grid.ColumnSpan="2" Margin="5"   />
+
+    </Grid>
+</Window>
